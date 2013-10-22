@@ -23,11 +23,11 @@
 
 Пример:
 
-    "Marvin".thread :size, -> x { x ** 4 }, :to_s, -> s { s.split "" }, -> a { a[0] + a[-1] }, :to_i # Резултат: 12
+    "Marvin".thread :size, -> x { x ** 4 }, :to_s, -> s { s.split "" }, -> a { a[0] + a[-1] }, :to_i # Резултат: 16
 
 Горният пример е еквивалентен на израза:
 
-    (((-> a { a[0] + a[1] }).(((("Marvin".size) ** 4).to_s).split "")).to_i)
+    (((-> a { a[0] + a[-1] }).(((("Marvin".size) ** 4).to_s).split "")).to_i)
 
 За още примери разгледайте sample\_spec-a.
 
